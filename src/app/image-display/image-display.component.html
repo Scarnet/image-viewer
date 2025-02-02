@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Latest Received Image</h2>
+
+  <mat-card *ngIf="latestImage?.latestEvent?.imageUrl">
+    <img [src]="latestImage?.latestEvent?.imageUrl" alt="Received Image">
+    <mat-card-content>
+      <p>{{ latestImage?.latestEvent?.description }}</p>
+      <p><strong>Received at:</strong> {{ latestImage?.latestEvent?.timestamp | date:'short' }}</p>
+    </mat-card-content>
+  </mat-card>
+
+  <p *ngIf="!latestImage?.latestEvent?.imageUrl">No image received yet.</p>
+</div>
